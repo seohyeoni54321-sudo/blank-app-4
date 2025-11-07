@@ -38,7 +38,7 @@ def load_pdf_files(uploaded_files):
     #    - chunk_overlap: 덩어리 간 겹치는 부분 길이
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     split_docs = text_splitter.split_documents(all_documents)
-    
+
 
     # 4. 분할된 문서들을 임베딩하여 벡터 DB(FAISS)에 저장하기
     vector = FAISS.from_documents(split_docs, OpenAIEmbeddings())
@@ -102,7 +102,7 @@ def ask_agent(agent_executor, question: str):
 def main():
     # 10. 여러분의 챗봇에 맞는 스타일로 변경하기
     st.set_page_config(page_title="기술보증기금 AI 비서", layout="wide", page_icon="🤖")
-    st.image('data/kibo_image.jpg', width=800)
+    st.image('data/빅히어로.jpg', width=800)
     st.markdown('---')
     st.title("안녕하세요! RAG + Web을 활용한 '기술보증기금 AI 비서' 입니다")  
 
