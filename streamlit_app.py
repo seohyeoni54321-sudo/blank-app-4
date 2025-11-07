@@ -38,9 +38,10 @@ def load_pdf_files(uploaded_files):
     #    - chunk_overlap: 덩어리 간 겹치는 부분 길이
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
     split_docs = text_splitter.split_documents(all_documents)
+    
 
     # 4. 분할된 문서들을 임베딩하여 벡터 DB(FAISS)에 저장하기
-   vector = FAISS.from_documents(split_docs, OpenAIEmbeddings())
+    vector = FAISS.from_documents(split_docs, OpenAIEmbeddings())
 
     # 5. 검색기(retriever) 객체 생성
     retriever = vector.as_retriever(search_kwargs={"k": 5})
