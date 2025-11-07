@@ -104,7 +104,7 @@ def main():
     st.set_page_config(page_title="기술보증기금 AI 비서", layout="wide", page_icon="🤖")
     st.image('data/빅히어로.png', width=800)
     st.markdown('---')
-    st.title("안녕하세요! RAG + Web을 활용한 '기술보증기금 AI 비서' 입니다")  
+    st.title("안녕하세요! '기술보증기금 채용AI 비서' 입니다")  
 
     with st.sidebar:
         openai_api = st.text_input("OPENAI API 키", type="password")
